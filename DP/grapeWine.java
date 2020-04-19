@@ -1,3 +1,4 @@
+// BOJ 2156 포도주 시식
 import java.io.*;
 
 class Main {
@@ -5,10 +6,11 @@ class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
         // D[n] = n개의 잔의 포도주가 있을 대, 최대로 마실 수 있는 양
+        // X => 안 마신다, O => 마신다.
         // D[n - 1] + X
-        // D[n - 2] + XO
-        // D[n - 3] + XOO
-        // D[n - 4] + XOOX
+        // D[n - 2] + X,O
+        // D[n - 3] + X,O,O
+        // D[n - 4] + X,O,O,X
         int[] D = new int[N + 1];
         int[] input = new int[N + 1];
         for(int idx = 1; idx <= N; idx++)
