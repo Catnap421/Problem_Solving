@@ -7,4 +7,6 @@ Hash에 대해
 
 ## Hash tables
 
-
+U : universe set of keys - It can have garbage.
+K : actually stored set of keys
+T : table
