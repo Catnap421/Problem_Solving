@@ -28,6 +28,9 @@ class Solution:
                     right -= 1
             
         return result
+    
+    
+
         
         """
         시간초과가 일어난 풀이
@@ -56,6 +59,34 @@ class Solution:
         return answer
         
         # 수 하나를 선택 -> twoSum을 호출하여 Set을 반환 -> Set에 고른 수를 추가한 Set 생성
+        
+        import collections
+
+        class Solution:
+            def threeSum(self, nums: List[int]) -> List[List[int]]:
+                result = set()
+                num_dict = collections.Counter(nums)
+
+                for i in num_dict:
+                    num_dict[i] -= 1
+                    for j in num_dict:
+                        if num_dict[j]  < 1:
+                            continue
+
+                        num_dict[j] -= 1
+
+                        rest = -j -i
+
+                        if num_dict[rest]:
+                            result.add(tuple(sorted((rest, j, i))))
+                        num_dict[j] += 1
+                    num_dict[i] += 1
+
+                return [*map(list, result)]
+
+        dictionary를 활용한 풀이
+        1. list나 tuple이나 동일하게 인식한다는 점 -> 이러한 list set 경우 tuple 활용하기!
+        2. unpacking operator인 * 활용하기!   
         """
         
 
